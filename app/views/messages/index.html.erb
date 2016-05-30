@@ -34,10 +34,15 @@
   </div>
 </div>
 <%= form_for(@message) do |f| %>
-    名前：
-    <%= f.text_area :name, :maxlength => "15"  %>
+ <form class: form-horizontal>
+     <label>名前
+    <%= f.text_area :name, :maxlength => "15", :size => "30", :placeholder => "名前を入力(15字以内)" %></label>
+    <br />
     
-    内容：
-    <%= f.text_area :body, :maxlength => "100" %>
+    <label>内容
+    <%= f.text_area :body, :maxlength => "100", :size => "100", :placeholder => "コメントを入力(100字以内)" %>
+    </label>
     <%= f.submit class: "btn btn-sm btn-primary" %>
+    </form>
+    
 <% end %>
