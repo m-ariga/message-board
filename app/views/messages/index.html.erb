@@ -20,6 +20,7 @@
   </div>
 </body>
 </html>
+
 <div class="panel panel-default">
   <div class="panel-heading">
     メッセージ一覧
@@ -33,11 +34,29 @@
     <% end %>
   </div>
 </div>
-<%= form_for(@message) do |f| %>
-    名前：
-    <%= f.text_field :name %>
 
+<<<<<<< HEAD
     内容：
     <%= f.text_area :body %>
+=======
+<%= form_for @message, :html => {:class => 'form-horizontal'} do |f| %>
+ <div class = "container">
+   <div class = "form-group">
+    <%= f.label :name, "名前", class: "col-sm-2 label-control" %>
+    <%= f.text_field :name, class: "col-sm-6 form-control", :placeholder => "名前を入力(20字以内)" %>
+   </div>  
+ </div>
+ <div class = "container">
+   <div class = "form-group">
+    <%= f.label :body, "内容", class: "col-sm-2 label-control" %>
+    <%= f.text_area :body, class: "col-sm-6 form-control", :placeholder => "コメントを入力(30字以内)" %>
+ </div>
+ </div>
+ <div class = "container">
+ <div class = "form-group">
+>>>>>>> challenge1
     <%= f.submit class: "btn btn-sm btn-primary" %>
+</div>  
+ </div>  
+    
 <% end %>
